@@ -12,15 +12,15 @@ class RoySocApp;
 
 class Square {
 	private:
-		Node *root_;
-		int num_items_;
+		Node *ori;
+		int num;
 	public:
-		Square() : root_() {}
+		Square() : ori() {}
 		~Square();
 		void addNode(int info);
 		Node* at(int index);
-		void bump();
-		void reverse();
+		void incr();
+		void reverse(Square sent);
 		void setLength(int length);
 		int length();
 };

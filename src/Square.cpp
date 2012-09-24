@@ -8,31 +8,41 @@ using namespace ci::app;
 using namespace std;
 
 Square::~Square(){
-	if (root_){
-		Node* tmp = root_;
-		while (tmp->next!=root_){
-			Node* t = tmp;
-			tmp = tmp->next;
+	if (ori){
+
+		Node* temp = ori;
+		while (temp->next!=ori){
+
+			Node* t = temp;
+			temp = temp->next;
 			delete(t);
 		}
-		delete tmp;
-		root_ = NULL;
+
+		delete temp;
+		ori = NULL;
 	}
 }
+// Based on class lecture
 void Square::addNode(int info){
-	if (num_items_ < 0)
-		num_items_ = 0;
-	num_items_++;
-	Node* t = new Node(info, NULL);
-	if (root_ == NULL){
-		t->next = t;
-		root_ = t;
+
+	if (num < 0)
+		num = 0;
+
+	num++;
+	Node* n = new Node(info, NULL);
+	if (ori == NULL){
+
+		n->next = n;
+		ori = n;
 		return;
 	}
-	Node* tmp = root_;
-	while(tmp->next != root_){
-		tmp = tmp->next;
+
+	Node* temp = ori;
+	while(temp->next != ori){
+
+		temp = temp->next;
 	}
-	tmp->next = t;
-	t->next = root_;
+
+	temp->next = n;
+	n->next = ori;
 }
