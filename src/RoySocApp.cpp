@@ -19,6 +19,7 @@ class RoySocApp : public AppBasic {
 	void draw();
 	void keyDown(KeyEvent event);
 	bool help;
+	Square l;
 	gl::TextureFontRef	mTextureFont;
 	Font mFont;
 };
@@ -59,11 +60,16 @@ void RoySocApp::draw()
 	gl::setMatricesWindow( getWindowSize() );
 	gl::enableAlphaBlending();
 	gl::clear( Color( 0, 0, 0 ) );
-	
+	gl::color( ColorA( .4f, 0.8f, 0.1f, .5f ) );
+	gl::drawSolidRect(Rectf(100, 100, 200, 200));
+	gl::color( ColorA( .8f, 0.8f, 0.1f, .5f ) );
+	gl::drawSolidRect(Rectf(150, 100, 250, 250));	
+	gl::color( ColorA( .2f, 0.5f, 0.9f, .5f ) );
+	gl::drawSolidRect(Rectf(200, 100, 300, 300));	
 	if (help==true){std::string str( "Press '?' to toggle instructions" );
 	Rectf boundsRect( 40, mTextureFont->getAscent() + 40, getWindowWidth() - 40, getWindowHeight() - 40 );
 
-	gl::color( ColorA( 1, 0.5f, 0.25f, 1.0f ) );
+	gl::color( ColorA( 1, 0.5f, 0.25f, .5f ) );
 
 	mTextureFont->drawStringWrapped( str, boundsRect );
 	}

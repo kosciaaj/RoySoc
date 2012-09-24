@@ -1,20 +1,30 @@
-class Square{
-public:
-	Square (int depth, int position, int offset, int width);
-	//Next and previous pointers
-	Square* next;
-	Square* prev;
-	// Pointer to the sentinal
-	Square* sent;
+#ifndef SQAURE_H
 
-	int depth;
-	int position;
-	int offset;
-	int width;
+#define SQUARE_H
 
-	void draw();
-	void update();
-	void addSquare();
+struct Node{
+	int data;
+	Node* next;
+	Node(int x, Node* y) : data(x), next(y){}
 };
-void insertAfter();
+
+class RoySocApp;
+
+class Square {
+	private:
+		Node *root_;
+		int num_items_;
+	public:
+		Square() : root_() {}
+		~Square();
+		void addNode(int info);
+		Node* at(int index);
+		void bump();
+		void reverse();
+		void setLength(int length);
+		int length();
+};
+
+#endif
+
 
