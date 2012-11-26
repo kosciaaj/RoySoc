@@ -1,6 +1,5 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
-
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Text.h"
 #include "cinder/gl/Texture.h"
@@ -19,7 +18,6 @@ class RoySocApp : public AppBasic {
 	void draw();
 	void keyDown(KeyEvent event);
 	bool help;
-
 	gl::TextureFontRef	mTextureFont;
 	Font mFont;
 };

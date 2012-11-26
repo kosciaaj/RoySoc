@@ -7,6 +7,7 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+//Based on class lecture
 Square::~Square(){
 	if (ori){
 
