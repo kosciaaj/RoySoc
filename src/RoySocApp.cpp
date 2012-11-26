@@ -1,6 +1,6 @@
 #include "cinder/app/AppBasic.h"
 #include "cinder/gl/gl.h"
-#include "Square.h"
+
 #include "cinder/gl/TextureFont.h"
 #include "cinder/Text.h"
 #include "cinder/gl/Texture.h"
@@ -19,13 +19,14 @@ class RoySocApp : public AppBasic {
 	void draw();
 	void keyDown(KeyEvent event);
 	bool help;
-	Square l;
+
 	gl::TextureFontRef	mTextureFont;
 	Font mFont;
 };
 
 void RoySocApp::setup()
 {
+	//Inspired from the cinder samples TextureFont, TextTest, and TextBox
 	help = true;
 	#if defined( CINDER_COCOA_TOUCH )
 	mFont = Font( "Cochin-Italic", 24 );
