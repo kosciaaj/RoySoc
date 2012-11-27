@@ -24,7 +24,7 @@ class RoySocApp : public AppBasic {
 
 void RoySocApp::setup()
 {
-	//Inspired from the cinder samples TextureFont, TextTest, and TextBox
+	//Inspired from the cinder samples TextureFont, TextTest, and TextBox + Duberstein's work. 
 	help = true;
 	#if defined( CINDER_COCOA_TOUCH )
 	mFont = Font( "Cochin-Italic", 24 );
